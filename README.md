@@ -1,5 +1,9 @@
 # PricePoint Technical Report
 
+## Overview
+
+The purpose of PricePoint is to determine the most revenue made based on renovations or changes made to the property in a short period of time i.e. < three years.  
+
 ## Data Acquistions
 
 The data utilized for this project came from the Metropolitan Regional Information System. The data warehouse contains a record for every piece of property sold in the states of Washington, D.C., Virgina, Maryland, Delaware, and Pennsylvania since 1998. 
@@ -9,6 +13,28 @@ The data warehouse contains millions of rows and 351 features for every row. Bec
 The data was provided by a local real estate brokerage in a CSV format, because of system limitations of 5K per query. The limitation nessecitated three seperate pools to aggregate the data and combining the tables via Microsoft Excel.
 
 ## Data Cleaning, Transforming, and Pre-Processing
+
+Basic data cleaning included getting rid of bad data elements by finding and eliminating obvious errors. Transformations entailed creating date/time objects, creating dummy variables as there are a plethora of categorical features in the data set, and transforming bools to ints. 
+
+The purpose of the project is to find quick renovations made to a property that maximize revenue. Therefore the first thing that needed to be done is find duplicates in the data frame and ones within three years of each other. The next step was to subtract the features of the original duplicate from the most recent duplicate in order to find out what changed or capture the delta of the features.
+
+## Operationalizing the Outcome Variable and Independant Variables
+
+The project is solving a business question, which property to buy for renovation and which renovations might lead to the highest return. This project is limited in scope and only captures the revenue side at this time (exluding expenditures for lack of data). Therefore the outcome variable that makes the most sense is ClosePrice or revenue made from a transaction. 
+
+Initial analysis focused on independant variables: square footage, number of bedrooms, number of full baths, and number of half baths. Outside of stylistic considerations these are industry standard variables for valuation. Additional analysis brought in categorical information such as the inclusion of parking or a garage and other amenitiees.
+
+## Models and Hyperparameters
+
+The first plotting accomplished was a scatter plot to visualize the relation of the respective variables to 'ClosePrice'. Following that a multi linear regression was used and the residuals were plotted to determine the accuracy of the model. It performing this it appeared that a large amount of 0s in the 'LivingArea' variable were skewing the results.
+
+In Model Run #2 the data was cleaned further to reduce skewness and a MLR was run again, this time plotting the R^2. The results were found the be weak at .379. Additional analysis was done by breaking the renovations into small, medium, and large (by square foot), this showed that the model was better at predicting small and medium renovations while large renovations had greater variance. 
+
+Lastly the decision tree was used to determine attirbutes most associated with the dependant variable 'CloseePrice'
+
+## Future Deployment Strategies, Additional Data, and Modeling Techniques
+
+
 
 
 
