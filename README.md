@@ -34,6 +34,14 @@ Lastly the decision tree was used to determine attirbutes most associated with t
 
 ## Future Deployment Strategies, Additional Data, and Modeling Techniques
 
+Once brought to greater maturity this product will be utilized to make acquistion decisions with D.C. and other markets. It will be changed from a Jupyter Notebook to production code and a UI build of for use by analysts and acquistion managers. 
+
+There are a plethora of additional data sources to include. From the existing dataset making better use of the categories or features concerning amenties. The data warehouse also includes a total of 351 attributes per property, more features could be brought in by running additional queries. Finally since this is an acquistion decision support tool, costs also play a major roll in the decisions being made. Therefore the cost side will be another large piece of the project to be incorporated
+
+In the future there are many different types of analysis to be done to help develop the product further. One is NLP in order to better capture the amenities or changes in amenities that area provided. Computer vision could also be used to determine the condition of the property beyond what is include in the attributes of the system. Other advanced methods of classisifaction could also be used to better classify the outputs and assist the decision making process
+
+
+
 
 
 
